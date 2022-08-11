@@ -155,4 +155,57 @@ picture {
   background-position: center center;
 }
 
+/*
+--------------------
+------Main----------
+--------------------
+*/
+.main {
+  font-family: var(--f-openSans);
+  width: min(100%, 120rem);
+  margin-inline: auto;
+  padding-block: 10rem;
+}
+.main .about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 10rem;
+}
+.main .about .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 36rem;
+  padding: 4rem;
+  border-radius: 15px;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1), 0 -0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  gap: 4rem;
+}
+.main .about .container__img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.main .about .container .grow-together {
+  background-image: url(../images/illustration-grow-together.svg);
+}
+.main .about .container .flowing {
+  background-image: url(../images/illustration-flowing-conversation.svg);
+}
+.main .about .container .users {
+  background-image: url(../images/illustration-your-users.svg);
+}
+.main .about .container__content {
+  align-self: center;
+}
+.main .about .container__content .header-secondary {
+  font-size: 3rem;
+  color: var(--c-vd-cyan);
+  margin-bottom: 2rem;
+}
+.main .about .container__content .parag {
+  font-size: var(--fs-18);
+  color: var(--c-grayish-blue);
+}
+
 /*# sourceMappingURL=style.css.map */

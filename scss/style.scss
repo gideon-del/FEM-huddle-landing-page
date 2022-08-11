@@ -154,3 +154,57 @@ picture {
     background-position: center center;
   }
 }
+
+/*
+--------------------
+------Main----------
+--------------------
+*/
+.main {
+  font-family: var(--f-openSans);
+  width: min(100%, 120rem);
+  margin-inline: auto;
+  padding-block: 10rem;
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 10rem;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 36rem;
+      padding: 4rem;
+      border-radius: 15px;
+      box-shadow: 0 0.2rem 0.4rem rgba(#000, 0.1),
+        0 -0.2rem 0.4rem rgba(#000, 0.1);
+      gap: 4rem;
+      &__img {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      .grow-together {
+        background-image: url(../images/illustration-grow-together.svg);
+      }
+      .flowing {
+        background-image: url(../images/illustration-flowing-conversation.svg);
+      }
+      .users {
+        background-image: url(../images/illustration-your-users.svg);
+      }
+      &__content {
+        align-self: center;
+        .header-secondary {
+          font-size: 3rem;
+          color: var(--c-vd-cyan);
+          margin-bottom: 2rem;
+        }
+        .parag {
+          font-size: var(--fs-18);
+          color: var(--c-grayish-blue);
+        }
+      }
+    }
+  }
+}
