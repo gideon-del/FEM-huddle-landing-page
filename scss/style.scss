@@ -59,7 +59,7 @@ ul {
 
 img,
 picture {
-  width: 100%;
+  display: inline-block;
   object-fit: cover;
 }
 /*
@@ -82,7 +82,15 @@ picture {
     transform: translateY(1rem) scale(0.9);
   }
 }
+.double-shadow {
+  box-shadow: 0 0.2rem 0.4rem rgba(#000, 0.1), 0 -0.2rem 0.4rem rgba(#000, 0.1);
+}
 
+.parag {
+  font-size: var(--fs-18);
+  color: var(--c-grayish-blue);
+  font-weight: var(--fw-4);
+}
 /*
 --------------------
 ------Header--------
@@ -176,8 +184,7 @@ picture {
       grid-template-rows: 36rem;
       padding: 4rem;
       border-radius: 15px;
-      box-shadow: 0 0.2rem 0.4rem rgba(#000, 0.1),
-        0 -0.2rem 0.4rem rgba(#000, 0.1);
+
       gap: 4rem;
       &__img {
         background-repeat: no-repeat;
@@ -200,10 +207,64 @@ picture {
           color: var(--c-vd-cyan);
           margin-bottom: 2rem;
         }
+      }
+    }
+  }
+  .modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .card {
+      display: inline-block;
+      padding: 9rem 13rem;
+      margin-inline: auto;
+      border-radius: 15px;
+      text-align: center;
+      .btn__pink {
+        background-color: var(--c-pink);
+        color: #fff;
+        margin-top: 3rem;
+        font-size: var(--fs-18);
+        padding: 3rem 17rem;
+      }
+    }
+  }
+}
+/*
+----------------------
+------Footer----------
+-----------------------
+*/
+.footer {
+  padding: 2rem 5rem;
+  background-color: var(--c-vd-cyan);
+  color: var(--c-grayish-blue);
+  font-family: var(--f-openSans);
+  .column {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    // justify-content: space-around;
+    .contact {
+      display: flex;
+      flex-direction: column;
+
+      &__logo {
+        display: inline-block;
+        margin-bottom: 5rem;
+      }
+      &__details {
+        display: grid;
+        padding-inline: 1rem;
+        grid-template-columns: 1fr 10fr;
+
+        margin-bottom: 2rem;
+        align-content: center;
         .parag {
-          font-size: var(--fs-18);
-          color: var(--c-grayish-blue);
+          color: #fff;
+          font-size: 2rem;
         }
+      }
+      &__img {
       }
     }
   }
