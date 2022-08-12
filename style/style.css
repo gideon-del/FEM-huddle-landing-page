@@ -380,6 +380,9 @@ picture {
     width: 90%;
     padding: 2rem 4rem;
   }
+  .main .modal .card .btn__pink {
+    padding: 1.5rem 2.5rem;
+  }
   .footer {
     padding-inline: 2rem;
   }
