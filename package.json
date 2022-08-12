@@ -1,0 +1,30 @@
+{
+  "name": "fem-huddle-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "convert:scss": "npx sass scss/style.scss style/style.css -w",
+    "prefix:css": " npx postcss style/style.css --use autoprefixer -d build/",
+    "final:css": "npx sass style/style.prefix.css style/style.css",
+    "build": "npm-run-all prefix:css final:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gideon-del/FEM-huddle-landing-page.git"
+  },
+  "keywords": [
+    "Project"
+  ],
+  "author": "Gideon Chidi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gideon-del/FEM-huddle-landing-page/issues"
+  },
+  "homepage": "https://github.com/gideon-del/FEM-huddle-landing-page#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16"
+  }
+}

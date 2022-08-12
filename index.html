@@ -11,6 +11,13 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style/style.css" />
     <title>
       Frontend Mentor | Huddle landing page with alternating feature blocks
@@ -104,13 +111,13 @@
       </div>
     </main>
     <footer class="footer">
+      <div class="footer__logo">
+        <img src="./images/footer-logo.svg" alt="Logo" />
+      </div>
       <div class="column">
         <div class="contact">
-          <div class="contact__logo">
-            <img src="./images/footer-logo.svg" alt="Logo" />
-          </div>
           <div class="contact__details">
-            <div class="contact__img">
+            <div class="contact__img start">
               <img src="./images/icon-location.svg" alt="" />
             </div>
 
@@ -120,17 +127,42 @@
             </p>
           </div>
           <div class="contact__details">
-            <img src="./images/icon-phone.svg" alt="" />
+            <div class="contact__img">
+              <img src="./images/icon-phone.svg" alt="" />
+            </div>
             <p class="parag">+1-543-123-4567</p>
           </div>
           <div class="contact__details">
-            <img src="./images/icon-email.svg" alt="" />
+            <div class="contact__img">
+              <img src="./images/icon-email.svg" alt="" />
+            </div>
             <p class="parag">example@huddle.com</p>
           </div>
         </div>
-        <div class="footer__info">Info</div>
-        <div class="footer__contact">Contact</div>
-        <div class="footer__icons">Icons</div>
+        <div class="footer__info p-right">
+          <a href="#" class="footer__info--link">About Us</a
+          ><a href="" class="footer__info--link">What We Do</a
+          ><a href="" class="footer__info--link">FAQ</a>
+        </div>
+        <div class="footer__info">
+          <a href="#" class="footer__info--link">Career</a
+          ><a href="" class="footer__info--link">Blog</a
+          ><a href="" class="footer__info--link">Contact</a>
+        </div>
+        <div class="footer__icons">
+          <div class="icon__box facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <div class="icon__box twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="icon__box instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="parag">&copy; Copyright 2018 Huddle. All rights reserved.</p>
       </div>
     </footer>
     <!-- 
@@ -169,7 +201,7 @@
   Blog
   Contact Us
 
-  &copy; Copyright 2018 Huddle. All rights reserved. -->
+  -->
 
     <footer>
       <p class="attribution" style="display: none">

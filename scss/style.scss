@@ -24,6 +24,18 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@mixin respond($breakpoint) {
+  @if ($breakpoint == tab-port) {
+    @media screen and(max-width:900px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == phone) {
+    @media screen and(max-width:600px) {
+      @content;
+    }
+  }
+}
 /*
 --------------------
 ------Reset--------
@@ -52,6 +64,7 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
 }
 ul {
   list-style-type: none;
@@ -77,6 +90,7 @@ picture {
     box-shadow: 0 1rem 1rem rgba(#000000, 0.1);
     transition: all 0.2s ease-in;
     font-size: var(--fs-18);
+    // font-weight: var(--fw-4);
   }
   &:active {
     transform: translateY(1rem) scale(0.9);
@@ -90,6 +104,9 @@ picture {
   font-size: var(--fs-18);
   color: var(--c-grayish-blue);
   font-weight: var(--fw-4);
+}
+.p-right {
+  padding-inline-start: 8rem;
 }
 /*
 --------------------
@@ -173,6 +190,7 @@ picture {
   width: min(100%, 120rem);
   margin-inline: auto;
   padding-block: 10rem;
+
   .about {
     display: flex;
     flex-direction: column;
@@ -214,18 +232,22 @@ picture {
     width: 100%;
     display: flex;
     justify-content: center;
+
     .card {
       display: inline-block;
       padding: 9rem 13rem;
       margin-inline: auto;
       border-radius: 15px;
       text-align: center;
+      margin-bottom: -17rem;
+      background-color: #fff;
       .btn__pink {
         background-color: var(--c-pink);
         color: #fff;
         margin-top: 3rem;
         font-size: var(--fs-18);
         padding: 3rem 17rem;
+        font-weight: var(--fw-4);
       }
     }
   }
@@ -236,35 +258,174 @@ picture {
 -----------------------
 */
 .footer {
-  padding: 2rem 5rem;
+  // padding: 13rem 5rem 0rem;
+  padding-top: 13rem;
   background-color: var(--c-vd-cyan);
   color: var(--c-grayish-blue);
   font-family: var(--f-openSans);
+  &__logo {
+    display: inline-block;
+    margin-bottom: 5rem;
+    padding-inline: 5rem;
+  }
   .column {
     display: grid;
     grid-template-columns: 1.5fr repeat(3, 1fr);
+    padding-inline: 5rem;
     // justify-content: space-around;
     .contact {
       display: flex;
       flex-direction: column;
 
-      &__logo {
-        display: inline-block;
-        margin-bottom: 5rem;
-      }
       &__details {
-        display: grid;
+        display: flex;
+        gap: 2rem;
         padding-inline: 1rem;
         grid-template-columns: 1fr 10fr;
-
+        align-items: center;
         margin-bottom: 2rem;
         align-content: center;
+        .start {
+          align-self: flex-start;
+          padding-top: 0.5rem;
+        }
         .parag {
-          color: #fff;
+          color: var(--c-vpale-cyan);
           font-size: 2rem;
         }
       }
-      &__img {
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    &--link {
+      color: var(--c-vpale-cyan);
+      font-size: var(--fs-18);
+      font-weight: var(--fw-4);
+    }
+  }
+  &__icons {
+    display: flex;
+    gap: 2rem;
+    .icon__box {
+      width: 3rem;
+      background-repeat: no-repeat;
+      color: #fff;
+      font-size: 2rem;
+
+      i {
+        width: 4rem;
+        height: 4rem;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .copyright {
+    text-align: end;
+  }
+}
+/*
+--------------------------
+------Mobile View----------
+---------------------------
+*/
+@include respond(tab-port) {
+  //Header
+  .header {
+    &__intro {
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(2, 1fr);
+      align-content: center;
+      justify-content: center;
+    }
+    &__text {
+      align-items: center;
+    }
+    &__main {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+  //Main
+  .main {
+    .modal {
+      .card {
+        .btn__pink {
+          padding: 2rem 4rem;
+        }
+      }
+    }
+  }
+  //Footer
+  .p-right {
+    padding-inline-start: 0;
+  }
+}
+@include respond(phone) {
+  .header__main {
+    font-size: 2.2rem;
+  }
+  .btn {
+    padding: 1rem 3.5rem;
+  }
+
+  .header {
+    &__logo {
+      width: 10rem;
+      img {
+        width: 100%;
+      }
+    }
+    &__container {
+      padding-inline: 0.5rem;
+    }
+    &__text {
+      padding-inline: 2rem;
+    }
+    &__link {
+      padding: 1rem 2rem;
+    }
+  }
+  .main {
+    .about {
+      .container {
+        width: 90%;
+        margin-inline: auto;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 30rem);
+        &__img {
+          grid-row: 1/2;
+        }
+        &__content {
+          text-align: center;
+        }
+      }
+    }
+    .modal {
+      .card {
+        width: 90%;
+        padding: 2rem 4rem;
+      }
+    }
+  }
+  .footer {
+    padding-inline: 2rem;
+    .column {
+      display: flex;
+      flex-direction: column;
+      padding-inline: 2rem;
+      gap: 2rem;
+      .contact {
+        &__details {
+          padding-inline: 0;
+        }
       }
     }
   }
