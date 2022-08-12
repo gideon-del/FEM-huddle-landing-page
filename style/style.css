@@ -349,6 +349,9 @@ picture {
   .btn {
     padding: 1rem 3.5rem;
   }
+  .header {
+    background-image: url(../images/bg-hero-mobile.svg);
+  }
   .header__logo {
     width: 10rem;
   }
